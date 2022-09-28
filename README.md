@@ -1,10 +1,20 @@
+# Address book
+
 
 
 
 Start with Displaying Welcome to Address Book
-Program in AddressBookMain class on
+Program in AddressBookMain class.
 
-START Master Branch
+
+
+
+
+
+
+
+
+
 
 
 
@@ -19,6 +29,9 @@ city, state, zip, phone number and email...
 - Every UC is in a separate Git Branch and then merged with main
 - Naming Convention, Indentation, etc Code Hygiene will be checked during
 Review
+
+
+
 
 
 
@@ -42,6 +55,9 @@ Person
 
 
 
+
+
+
 UseCase 3-Ability to edit
 existing contact person using their
 name.
@@ -54,8 +70,13 @@ name.
 
 
 
+
+
 UseCase 4-Ability to delete a
 person using person's name
+
+
+
 
 
 
@@ -78,10 +99,13 @@ contact persons in Address Book.
 
 
 
+
 UseCase 6-Refactor to add multiple
 Address Book to the System. Each Address Book has a unique Name
 - Use Console to add new Address Book
 - Maintain Dictionary of Address Book Name 
+
+
 
 
 
@@ -105,10 +129,13 @@ Duplicate Entry.
 
 
 
+
 Usecase 8-Ability to search Person
 in a City or State across the multiple
 AddressBook - Search Result can show multiple person in
 the city or state.
+
+
 
 
 
@@ -123,6 +150,8 @@ by City or State - Maintain Dictionary of City and Person as
 well as State and Person
 - Use Collection Library to maintain
 Dictionary.
+
+
 
 
 
