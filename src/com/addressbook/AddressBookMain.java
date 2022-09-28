@@ -41,26 +41,29 @@ public class AddressBookMain {
         Contacts added using Constructor and print it using print function of Addressbook.
          */
         Person person = new Person("shalesh", "dutt", "gurgaon", "Gurgaon", "haryana", 129446, "947803666");
+
+        Person person1 = new Person("Ankita", "sharma", "delhi", "Gurgaon", "haryana", 129446, "947803666");
+
         addressBook.addContact(person);
-        System.out.println("Before adding Contacts are");
+        addressBook.addContact(person1);
         addressBook.printAddressBook();
         /*
         Adding new Contact using addContact method and by taking input from the user using Scanner
         and calling input method and printing it
          */
         System.out.println("Please enter details of new contacts you want to add");
-        Person person1 = input(scanner);
-        addressBook.addContact(person1);
-        System.out.println("Before deleting Contacts are");
-        addressBook.printAddressBook();
+        Person person2 = input(scanner);
+        addressBook.addContact(person2);
+        /*
+        Adding new Contact using addContact method and by taking input from the user using Scanner
+        and calling input method and printing it
+         */
 
-       /*
-       deleting existing contact by searching its name
-        */
-        System.out.println("Please enter name of the person you want to delete");
-        System.out.println();
-        addressBook.deleteContact("shalesh");
-        System.out.println("After deleting contact details are");
+        System.out.println("Please enter details of new contacts you want to add");
+        Person person3 = input(scanner);
+        addressBook.addContact(person3);
+
+        System.out.println("Multiple Contacts of list are : ");
         addressBook.printAddressBook();
 
     }
