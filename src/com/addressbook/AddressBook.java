@@ -11,32 +11,25 @@ public class AddressBook {
 
     }
 
-    public void editContact(Person editedContact) {
+
+    public void deleteContact(String name) {
         /*
-        Searching the person in the addressbook using for eachloop if found then change its details
-        with the new information provided
+        Searching the person in the addressbook using for eachloop if found then delete the contact
+
          */
-
+        Person findPerson = null;
         for (Person person : this.addressbook) {
-            /*
-            if person first name matches with the name provided in the editedContact then change its details
-            to the new information provided in the editedContact.
-             */
-
-            if (person.getFirstName().equals(editedContact.getFirstName())) {
-                person.setLastName(editedContact.getLastName());
-                person.setAddress(editedContact.getAddress());
-                person.setCity(editedContact.getCity());
-                person.setState(editedContact.getState());
-                person.setPhoneNumber(editedContact.getPhoneNumber());
-                person.setZip(editedContact.getZip());
-                return;
-
+            if (person.getFirstName().equals(name)) {
+                findPerson = person;
             }
         }
-        System.out.println("Name not found in the list");
-
+        if (findPerson == null) {
+            System.out.println("Name not found in the list");
+        } else {
+            addressbook.remove(findPerson);
+        }
     }
+
 
     public void printAddressBook() {
         for (Person person : this.addressbook) {
