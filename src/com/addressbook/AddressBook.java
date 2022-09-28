@@ -11,6 +11,33 @@ public class AddressBook {
 
     }
 
+    public void editContact(Person editedContact) {
+        /*
+        Searching the person in the addressbook using for eachloop if found then change its details
+        with the new information provided
+         */
+
+        for (Person person : this.addressbook) {
+            /*
+            if person first name matches with the name provided in the editedContact then change its details
+            to the new information provided in the editedContact.
+             */
+
+            if (person.getFirstName().equals(editedContact.getFirstName())) {
+                person.setLastName(editedContact.getLastName());
+                person.setAddress(editedContact.getAddress());
+                person.setCity(editedContact.getCity());
+                person.setState(editedContact.getState());
+                person.setPhoneNumber(editedContact.getPhoneNumber());
+                person.setZip(editedContact.getZip());
+                return;
+
+            }
+        }
+        System.out.println("Name not found in the list");
+
+    }
+
     public void printAddressBook() {
         for (Person person : this.addressbook) {
 

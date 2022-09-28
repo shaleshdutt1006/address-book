@@ -37,21 +37,30 @@ public class AddressBookMain {
 
         AddressBook addressBook = new AddressBook();
         Scanner scanner = new Scanner(System.in);
-/*
-Contacts added using Constructor and print it using print function of addressbook
- */
+        /*
+        Contacts added using Constructor and print it using print function of Addressbook.
+         */
         Person person = new Person("shalesh", "dutt", "gurgaon", "Gurgaon", "haryana", 129446, "947803666");
         addressBook.addContact(person);
         System.out.println("Before adding Contacts are");
         addressBook.printAddressBook();
-/*
-Adding new Contact using addContact method and by taking input from the user using Scanner and calling input method
-and printing it
- */
+        /*
+        Adding new Contact using addContact method and by taking input from the user using Scanner
+        and calling input method and printing it
+         */
         System.out.println("Please enter details of new contacts you want to add");
         Person person1 = input(scanner);
         addressBook.addContact(person1);
-        System.out.println("After adding new contacts are");
+        System.out.println("Before editing Contacts are");
+        addressBook.printAddressBook();
+
+       /*
+       edit existing contact by searching using its name and setting new details entered
+        */
+        System.out.println("Please enter name of the person and details you want to change");
+        Person person3 = input(scanner);
+        addressBook.editContact(person3);
+        System.out.println("After editing contact details are");
         addressBook.printAddressBook();
 
     }
