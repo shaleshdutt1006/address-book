@@ -37,9 +37,11 @@ public class AddressBookMain {
     /*
     Adding Contacts details using Constructor of person class
     */
-        Person person1 = new Person("amit", "dutt", "kaithal", "kaithal", "haryana", 54654, "845165489165");
+        Person person1 = new Person("amit", "dutt", "bandra", "mumbai", "haryana", 54654, "845165489165");
         Person person2 = new Person("ankita", "sharma", "andheri", "mumbai", "maharashtra", 56565, "94516558498");
-
+        Person person3 = new Person("sumit", "kumar", "antila", "pune", "maharashtra", 92226, "4849849840");
+        Person person4 = new Person("anybody", "rana", "emaar", "gurgaon", "haryana", 986544, "44948270");
+        Person person5 = new Person("anita", "sharma", "model", "mumbai", "delhi", 26556, "2554654");
     /*
     Adding contacts to different address books by using addContact method means every single address book
     has multiple contacts
@@ -48,12 +50,10 @@ public class AddressBookMain {
         AddressBook addressBook = new AddressBook();
         addressBook.addContact(person1);
         addressBook.addContact(person2);
-        System.out.println("Address book before adding new contact is : ");
-        addressBook.printAddressBook();
 
-        System.out.println("Checking duplicate entry before adding new contact");
         addressBook.addContact(input(scanner));
-        addressBook.printAddressBook();
+        System.out.println("Contacts of person in the same city are ");
+        addressBook.search("mumbai");
 
     }
 

@@ -11,45 +11,43 @@ public class AddressBook {
     */
     public void addContact(Person person) {
 
-        boolean isDuplicate = duplicateEntry(person.getFirstName(), person);
-        if (!isDuplicate) {
-            addressbook.add(person);
-        }
+        addressbook.add(person);
     }
 
-    public boolean duplicateEntry(String firstname, Person person) {
+
+    public void search(String city) {
     /*
-    checking duplicate entry in address book using for-each loop if person firstname matches with
-    the existing person first name in the address book means it is duplicate entry and return true else false
+    Searching Contacts which are in same city using for-each loop if City matches with
+    the existing person city then print it using print Address book Method
      */
 
         for (Person person1 : this.addressbook) {
-            if (person1.getFirstName().equals(firstname)) {
 
-                return true;
+            if (person1.getCity().equals(city)) {
+                printAddressBook(person1);
             }
+
         }
-        return false;
+
     }
 
         /*
-        Printing method to print all the contacts in the list using for each loop
+        Printing method to print all the details in the list using for each loop
          */
 
-    public void printAddressBook() {
-        for (Person person : this.addressbook) {
+    public void printAddressBook(Person person) {
 
-            System.out.println("-----------------------------------------------------");
-            System.out.println("First name = " + person.getFirstName());
-            System.out.println("last name = " + person.getLastName());
-            System.out.println("address = " + person.getAddress());
-            System.out.println("city = " + person.getCity());
-            System.out.println("state = " + person.getState());
-            System.out.println("zip = " + person.getZip());
-            System.out.println("phone number = " + person.getPhoneNumber());
-            System.out.println("-----------------------------------------------------");
-        }
+        System.out.println("-----------------------------------------------------");
+        System.out.println("First name = " + person.getFirstName());
+        System.out.println("last name = " + person.getLastName());
+        System.out.println("address = " + person.getAddress());
+        System.out.println("city = " + person.getCity());
+        System.out.println("state = " + person.getState());
+        System.out.println("zip = " + person.getZip());
+        System.out.println("phone number = " + person.getPhoneNumber());
+        System.out.println("-----------------------------------------------------");
     }
 }
+
 
 
