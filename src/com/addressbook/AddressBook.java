@@ -1,18 +1,35 @@
 package com.addressbook;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 public class AddressBook {
+
     ArrayList<Person> addressbook = new ArrayList<Person>();
 
     /*
-    Adding Contacts using addContact method in the arraylist of addressbook
-     */
-    public ArrayList<Person> addContact(Person person) {
-        this.addressbook.add(person);
-        return addressbook;
+    Adding Contacts using addContact method in the arraylist of address book and checking duplicates entry
+    */
+    public void addContact(Person person) {
 
+        boolean isDuplicate = duplicateEntry(person.getFirstName(), person);
+        if (!isDuplicate) {
+            addressbook.add(person);
+        }
+    }
+
+    public boolean duplicateEntry(String firstname, Person person) {
+    /*
+    checking duplicate entry in address book using for-each loop if person firstname matches with
+    the existing person first name in the address book means it is duplicate entry and return true else false
+     */
+
+        for (Person person1 : this.addressbook) {
+            if (person1.getFirstName().equals(firstname)) {
+
+                return true;
+            }
+        }
+        return false;
     }
 
         /*
