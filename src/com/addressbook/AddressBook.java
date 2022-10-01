@@ -2,39 +2,31 @@ package com.addressbook;
 
 import java.util.ArrayList;
 
+
 public class AddressBook {
 
-    ArrayList<Person> addressbook = new ArrayList<Person>();
+    ArrayList<Person> addressbook = new ArrayList<>();
+
+    public ArrayList<Person> getAddressbook() {
+        return addressbook;
+    }
+
+    public void setAddressbook(ArrayList<Person> addressbook) {
+        this.addressbook = addressbook;
+    }
 
     /*
-    Adding Contacts using addContact method in the arraylist of address book and checking duplicates entry
-    */
+        Adding Contacts using addContact method in the arraylist of address book and checking duplicates entry
+        */
     public void addContact(Person person) {
 
         addressbook.add(person);
     }
 
-
-    public void search(String city) {
     /*
-    Searching Contacts which are in same city using for-each loop if City matches with
-    the existing person city then print it using print Address book Method
+    Printing method to print all the details in the list using for each loop
      */
-
-        for (Person person1 : this.addressbook) {
-
-            if (person1.getCity().equals(city)) {
-                printAddressBook(person1);
-            }
-
-        }
-
-    }
-
-        /*
-        Printing method to print all the details in the list using for each loop
-         */
-
+//    }
     public void printAddressBook(Person person) {
 
         System.out.println("-----------------------------------------------------");
@@ -47,7 +39,7 @@ public class AddressBook {
         System.out.println("phone number = " + person.getPhoneNumber());
         System.out.println("-----------------------------------------------------");
     }
-}
 
+}
 
 

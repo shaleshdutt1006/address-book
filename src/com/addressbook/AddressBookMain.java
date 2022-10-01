@@ -5,7 +5,7 @@ import java.util.*;
 public class AddressBookMain {
     public static Person input(Scanner scanner) {
 
-        System.out.println("add details of a person");
+        System.out.println("Add details of a person");
 
         System.out.println("Please provide first name");
         String firstName = scanner.next();
@@ -27,12 +27,14 @@ public class AddressBookMain {
 
         System.out.println("Please provide phone number");
         String phoneNumber = scanner.next();
+
         Person person = new Person(firstName, lastName, address, city, state, zip, phoneNumber);
         return person;
     }
 
 
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
     /*
     Adding Contacts details using Constructor of person class
@@ -48,16 +50,55 @@ public class AddressBookMain {
     */
 
         AddressBook addressBook = new AddressBook();
-        addressBook.addContact(person1);
+        addressBook.addContact(new Person("amit", "dutt", "bandra", "mumbai", "haryana", 54654, "845165489165"));
         addressBook.addContact(person2);
+        AddressBook addressBook1 = new AddressBook();
+        addressBook1.addContact(person3);
+        addressBook1.addContact(person4);
+        AddressBook addressBook2 = new AddressBook();
+        addressBook2.addContact(person5);
+        addressBook2.addContact(person4);
 
+
+        Map<String, AddressBook> map = new HashMap<>();
+
+        map.put("addressBook", addressBook);
+        map.put("addressBook1", addressBook1);
+        map.put("addressBook2", addressBook2);
+    /*
+    Adding Person in the addressbook by calling input function
+     */
         addressBook.addContact(input(scanner));
+
+        System.out.println("Enter city you want contacts for");
+        String city = scanner.next();
+    /*
+    for iterating the map we take a variable e  and iterating over every addressbook in the map and temp is a variable of
+    type AddressBook like we take int a. In temp we are getting values of addressbooks one by one from map further for-each
+    loop to iterate persons in the addressbook and if person city equal to the input city then printing it.
+     */
+
         System.out.println("Contacts of person in the same city are ");
-        addressBook.search("mumbai");
+        for (Map.Entry<String, AddressBook> e : map.entrySet()) {
+
+            AddressBook temp = e.getValue();
+
+            for (Person person : temp.getAddressbook()) {
+
+                if (person.getCity().equalsIgnoreCase(city)) {
+
+                    temp.printAddressBook(person);
+
+                }
+            }
+
+        }
+
 
     }
-
-
 }
+
+
+
 
 
